@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
+    <link rel="stylesheet" href="app.css" />
     <script src="app.js" defer></script>
-</head>
-<body>
-   <button id="open_file">open</button> 
-   <p id="audioinput"></p>
-</body>
+  </head>
+  <body>
+    <button class="full-width-button" id="open_file">open</button>
+    <div id="panel">
+      <p id="audioinput"></p>
+      <button id="play" class="full-width-button">play</button>
+      <button id="pause" class="full-width-button">pause</button>
+      <button id="stop" class="full-width-button">stop</button>
+    </div>
+  </body>
 </html>

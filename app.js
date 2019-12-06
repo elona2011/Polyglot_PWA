@@ -1,26 +1,34 @@
 let fileHandle;
 let open_file = document.querySelector('#open_file')
 let audioinput = document.querySelector('#audioinput')
+let play = document.querySelector('#play')
+let pause = document.querySelector('#pause')
+let stop = document.querySelector('#stop')
 let audioinput_str = ''
+let mp3
+
 open_file.addEventListener('click', async (e) => {
   fileHandle = await window.chooseFileSystemEntries();
   // Do something with the file handle
   const file = await fileHandle.getFile();
-  const contents = await file.text();
-  // textArea.value = contents;
-  debugger
+  audioinput.textContent = file.name
+  mp3 = new Audio()
+  let objectURL = URL.createObjectURL(file);
+  mp3.src = objectURL
 });
 
-navigator.mediaDevices.enumerateDevices()
-  .then(function (devices) {
-    devices.forEach(function (device) {
-      audioinput_str += device.kind + ": " + device.label +
-        " id = " + device.deviceId + '__'
-      console.log(device.kind + ": " + device.label +
-        " id = " + device.deviceId);
-      audioinput.innerHTML = audioinput_str
-    });
-  })
-  .catch(function (err) {
-    console.log(err.name + ": " + err.message);
-  });
+play.addEventListener('click', e => {
+  if (mp3) {
+    mp3.play()
+  }
+})
+pause.addEventListener('click', e => {
+  if (mp3) {
+    mp3.pause()
+  }
+})
+stop.addEventListener('click', e => {
+  if (mp3) {
+    mp3.stop()
+  }
+})
