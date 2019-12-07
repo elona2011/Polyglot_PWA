@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="origin-trial" content="AhilDlB3/FriwuKtTMm+5BS+uOvCKyqtAxj5su2A5Bb0JhREs+wpwloGLBhH5stCm6HWmMPlrSHtqRLhdYcXcwAAAABqeyJvcmlnaW4iOiJodHRwczovL3d3dy55YW5qaWUubWU6NDQzIiwiZmVhdHVyZSI6Ik5hdGl2ZUZpbGVTeXN0ZW0iLCJleHBpcnkiOjE1NzkzNDU4NDEsImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AhilDlB3/FriwuKtTMm+5BS+uOvCKyqtAxj5su2A5Bb0JhREs+wpwloGLBhH5stCm6HWmMPlrSHtqRLhdYcXcwAAAABqeyJvcmlnaW4iOiJodHRwczovL3d3dy55YW5qaWUubWU6NDQzIiwiZmVhdHVyZSI6Ik5hdGl2ZUZpbGVTeXN0ZW0iLCJleHBpcnkiOjE1NzkzNDU4NDEsImlzU3ViZG9tYWluIjp0cnVlfQ==">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -12,12 +13,18 @@
 </head>
 
 <body>
-    <button class="full-width-button" id="open_file">open</button>
+    <input id="audio_file" type="file" accept="audio/*" />
+    <!-- <button class="full-width-button" id="open_file">open</button> -->
     <div id="panel">
         <p id="audioinput"></p>
         <button id="play" class="full-width-button">play</button>
         <button id="pause" class="full-width-button">pause</button>
         <button id="stop" class="full-width-button">stop</button>
+        <div>
+            <span id="playrate">1.0</span>
+            <button id="rateup" class="square-button">+</button>
+            <button id="ratedown" class="square-button">-</button>
+        </div>
     </div>
 </body>
 
