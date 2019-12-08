@@ -8,25 +8,29 @@ let rateup = document.querySelector('#rateup')
 let ratedown = document.querySelector('#ratedown')
 let playrate = document.querySelector('#playrate')
 let audioinput_str = ''
-let mp3
+let mp3 = new Audio()
 
 audio_file.onchange = function () {
   var files = this.files;
   var file = URL.createObjectURL(files[0]);
-  mp3 = new Audio()
   // mp3.defaultPlaybackRate = 2
   mp3.src = file
+  mp3.play()
 };
 
-// open_file.addEventListener('click', async (e) => {
-//   fileHandle = await window.chooseFileSystemEntries();
-//   // Do something with the file handle
-//   const file = await fileHandle.getFile();
-//   audioinput.textContent = file.name
-//   mp3 = new Audio()
-//   let objectURL = URL.createObjectURL(file);
-//   mp3.src = objectURL
-// });
+open_file.addEventListener('click', async (e) => {
+  fileHandle = await window.chooseFileSystemEntries();
+  // Do something with the file handle
+  const file = await fileHandle.getFile();
+  if (file) {
+    audioinput.textContent = file.name
+    let objectURL = URL.createObjectURL(file);
+    mp3.src = objectURL
+    mp3.play()
+  } else {
+    alert(`file is ${file}`)
+  }
+});
 
 play.addEventListener('click', e => {
   if (mp3) {
