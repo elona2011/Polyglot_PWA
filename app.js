@@ -61,3 +61,12 @@ ratedown.addEventListener('click', e => {
     // mp3.play()
   }
 })
+
+window.onload = () => {
+  'use strict';
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+             .register('./sw.js');
+  }
+}
